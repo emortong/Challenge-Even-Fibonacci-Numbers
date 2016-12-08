@@ -5,25 +5,53 @@
  * @param  {Number} maxFibValue
  * @return {Number} sum
  */
+
 function _sumFibs( maxFibValue ) {
+  var fibs = [1, 2];
   var sum = 0;
 
-  // do your work here
+  for(var i = 1; i < maxFibValue; i++) {
+    var nextFib = fibs[i] + fibs[i-1];
+    if(nextFib <= maxFibValue) {
+      fibs.push(nextFib);
+    }
+  }
+
+  for(var x = 0; x < fibs.length; x++) {
+    if(fibs[x]%2 === 0) {
+      sum += fibs[x];
+    }
+  }
 
   return sum;
 }
 
+console.log(_sumFibs(13));
+
+
+
+
+
 // bonus round
 function _highestFibonacciNumber (maxFibValue){
+  var fibs = [1, 2];
   var highest = 0;
 
-  //define your base case, validate your input
+  for(var i = 1; i < maxFibValue; i++) {
+    var nextFib = fibs[i] + fibs[i-1];
+    if(nextFib < maxFibValue) {
+      fibs.push(nextFib);
+    }
+  }
 
-
-  //do your work here
+highest = fibs[fibs.length-1];
+console.log(highest)
 
   return highest;
 };
+
+console.log(_highestFibonacciNumber (13))
+
 
 /**
  * Do not modify code below.

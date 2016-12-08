@@ -12,14 +12,12 @@ function _sumFibs( maxFibValue ) {
 
   for(var i = 1; i < maxFibValue; i++) {
     var nextFib = fibs[i] + fibs[i-1];
+
     if(nextFib <= maxFibValue) {
       fibs.push(nextFib);
     }
-  }
-
-  for(var x = 0; x < fibs.length; x++) {
-    if(fibs[x]%2 === 0) {
-      sum += fibs[x];
+    if(fibs[i]%2 === 0) {
+      sum += fibs[i];
     }
   }
 
